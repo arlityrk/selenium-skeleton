@@ -11,6 +11,8 @@ import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Base type of Selenium tests.
  */
@@ -66,6 +68,7 @@ public class JiraSeleniumTestBase {
     public WebDriver getDriver() {
         if (driver == null) {
             driver = new FirefoxDriver();
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
         return driver;
     }
@@ -84,4 +87,5 @@ public class JiraSeleniumTestBase {
         }
         return waits;
     }
+    //Arli kommentaar2
 }

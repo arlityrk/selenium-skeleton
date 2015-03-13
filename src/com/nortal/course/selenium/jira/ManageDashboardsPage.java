@@ -18,6 +18,9 @@ public class ManageDashboardsPage {
     @FindBy(id = "create_page")
     private WebElement createNewDashboard;
 
+    @FindBy(id = "search-dash-tab")
+    private WebElement searchLink;
+
     private JiraSeleniumTestBase testBase;
 
     public ManageDashboardsPage(JiraSeleniumTestBase testBase) {
@@ -29,6 +32,10 @@ public class ManageDashboardsPage {
     public CreateDashboardPage getCreateDashboardPage(){
         createNewDashboard.click();
         return new CreateDashboardPage(testBase);
+    }
+
+    public void clickSearchDashboards(){
+        searchLink.click();
     }
 
     public String getHeaderText(){

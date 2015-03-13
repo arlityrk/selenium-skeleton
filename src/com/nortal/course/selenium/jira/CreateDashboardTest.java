@@ -39,4 +39,14 @@ public class CreateDashboardTest extends JiraSeleniumTestBase{
 
     }
 
+    @Test ()
+    public void deleteDashboard(){
+        MainPageHeader header = new MainPageHeader(this);
+        //1) Navigate: Dashboard - Manage Dashboards
+        ManageDashboardsPage manageDashboards = header.getManageDashboardsPage();
+        assertEquals("Manage Dashboards", manageDashboards.getHeaderText());
+        manageDashboards.clickSearchDashboards();
+
+    }
+
 }
